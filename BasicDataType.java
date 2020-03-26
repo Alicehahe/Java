@@ -4,7 +4,7 @@ import java.math.*;
 
 /**
  * @Author：HanLu
- * @Description:这一个练习是用于巩固数据类型、运算符、类型转换知识点
+ * @Description:这一个练习是用于巩固数据类型及进制转换、运算符、类型转换、变量、标识符 关键字、常量知识点
  * @Date:Created in 2:54 PM 2020/3/25
  */
 public class BasicDataType {
