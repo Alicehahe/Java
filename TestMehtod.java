@@ -81,9 +81,9 @@ public class TestMehtod {
 
 
     //2、不可以构成重构的场景 1、方法返回值不同 2、形参名称不同
-    public static int addNum(int a,int b){ //会提示，已经定义过
+    /*public static int addNum(int a,int b){ //会提示，已经定义过
         int sum = a + b;
         return sum;
-    }
+    }*/
 
 }
