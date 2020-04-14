@@ -1,8 +1,6 @@
 package cn.com.shield.staging.java; //包名一定是位于文件的顶部
 
-import cn.com.shield.staging.Java002.TestDiffPackage; //导入公开的属性和方法，通过对象去访问
-
-import static cn.com.shield.staging.Java002.TestDiffPackage.*; //导入所有静态属性和方法，直接使用
+//import static cn.com.shield.staging.Java002.TestPackage.TestDiffPackage.*; //导入所有静态属性和方法，直接使用
 
 /**
  * @Author：HanLu
@@ -37,7 +35,7 @@ public class TestPackage {
         //2、调用不同包下其他类文件公开的属性和方法
         /**
          * 1、不同包下类文件之间互相引用公开的属性和方法，需要使用import导入包.具体类名
-         * import cn.com.shield.staging.Java002.TestDiffPackage;
+         * import cn.com.shield.staging.Java002.TestPackage.TestDiffPackage;
          */
         TestDiffPackage testDiffPackage = new TestDiffPackage("Lwt",45);
         testDiffPackage.test002();
@@ -45,14 +43,40 @@ public class TestPackage {
         //3、导入不同包下其他类的静态属性和方法
         /**
          * 1、不同包类文件使用静态属性和方法，需要将所有的静态内容全部导入后，可直接使用不需要new对象
-         * import static cn.com.shield.staging.Java002.TestDiffPackage.*;
+         * import static cn.com.shield.staging.Java002.TestPackage.TestDiffPackage.*;
          * Java002.TestDiffPackage类中方法实现如下
          * public static void test003(){
          *         System.out.println("height is "+height);
          *     }
          */
-        test003();
+       // test003();
 
+
+    }
+
+    /**
+     * @Author：HanLu
+     * @Description:这是另外一个包，我需要测试不同包下类文件之间的调用
+     * @Date:Created in 7:52 AM 2020/4/14
+     */
+    public static class TestDiffPackage {
+        String name;
+        int age;
+        static int height = 160;
+
+        public TestDiffPackage(String name,int age){
+            this.name = name;
+            this.age = age;
+        }
+
+        public void test002(){
+            System.out.println("name is "+ name);
+            System.out.println("age is "+ age);
+        }
+
+        public static void test003(){
+            System.out.println("height is "+height);
+        }
 
     }
 }
